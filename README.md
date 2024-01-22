@@ -10,9 +10,12 @@ Utility for getting starknet contract's class hashes from Scarb projects.
 
 ### Cargo
 
+NOTE: The binary crate can't be uploaded to `crates.io` because it has git dependencies, which are not supported by the registry.
+
 * Install the rust toolchain in order to have cargo installed by following
   [this](https://www.rust-lang.org/tools/install) guide.
-* run `cargo install class-hash`
+* Clone the repo and build the executable with `cargo build --release`.
+* Move the file `./target/release/class_hash` into a folder within your system path.
 
 ## Usage
 
