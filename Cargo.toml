@@ -1,0 +1,29 @@
+[package]
+name = "starknet-class-hash"
+description = "Utility for quickly getting starknet contract's class hashes"
+homepage = "https://github.com/ericnordelo/cairo-class-hash"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/ericnordelo/cairo-class-hash"
+keywords = ["cairo", "starknet", "class-hash", "class", "hash"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "class_hash"
+path = "src/class_hash/lib.rs"
+
+[[bin]]
+name = "class_hash"
+doc = false
+
+[dependencies]
+anyhow = "1.0.79"
+camino = "1.1.6"
+clap = { version = "4.4.18", features = ["derive"] }
+prettytable = "0.10.0"
+starkli = "0.1.8"
+starknet = { git = "https://github.com/xJonathanLEI/starknet-rs", rev = "c974e5cb42e8d8344cee910b76005ec46b4dd3ed" }
+serde_json = { version = "1.0.99", features = ["preserve_order"] }
+num = "0.4.1"
