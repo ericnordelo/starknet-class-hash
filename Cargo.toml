@@ -1,6 +1,6 @@
 [package]
 name = "starknet-class-hash"
-description = "Utility for quickly getting starknet contract's class hashes"
+description = "Utility for getting starknet contract's class hashes from Scarb projects."
 homepage = "https://github.com/ericnordelo/cairo-class-hash"
 version = "0.1.0"
 edition = "2021"
