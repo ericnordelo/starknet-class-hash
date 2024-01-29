@@ -15,6 +15,19 @@ pub fn get_scarb_manifest() -> Result<Utf8PathBuf> {
     Ok(manifest.unwrap())
 }
 
+pub fn clean() -> Result<()> {
+    let status = Command::new("scarb")
+        .arg("clean")
+        .status()
+        .context("Error while trying to clean the artifacts")?;
+
+    if status.success() {
+        Ok(())
+    } else {
+        bail!("Error while trying to clean the artifacts")
+    }
+}
+
 pub fn compile() -> Result<()> {
     let status = Command::new("scarb")
         .arg("build")

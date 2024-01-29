@@ -6,7 +6,7 @@ use prettytable::{format, Table};
 use crate::commands::CliCommand;
 use class_hash::artifacts::get_artifacts;
 use class_hash::get_class_hashes;
-use class_hash::scarb::{compile, get_scarb_manifest, print_compiler_versions};
+use class_hash::scarb::{clean, compile, get_scarb_manifest, print_compiler_versions};
 
 #[derive(Parser, Debug)]
 pub struct Get {
@@ -25,6 +25,7 @@ impl CliCommand for Get {
         let _ = get_scarb_manifest()?;
 
         if self.compile {
+            clean()?;
             compile()?;
         }
 
