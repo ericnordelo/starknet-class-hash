@@ -1,5 +1,6 @@
 pub mod artifacts;
 pub mod scarb;
+pub mod types;
 
 use anyhow::{Ok, Result};
 use artifacts::Artifacts;
